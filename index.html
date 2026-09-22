@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AYO-CARD — Premium Digital Visiting Card</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-mark">A</div>
+
+            <div class="brand-text">
+                <span class="brand-name">AYO-CARD</span>
+                <span class="brand-tagline">Digital Identity Studio</span>
+            </div>
+        </div>
+
+        <div class="top-actions">
+            <button class="top-btn" id="resetBtn">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset
+            </button>
+
+            <button class="download-main-btn" id="downloadBtn">
+                <i class="fa-solid fa-download"></i>
+                Download Card
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- MAIN DESIGNER -->
+    <!-- ============================= -->
+
+    <main class="designer">
+
+        <!-- ========================= -->
+        <!-- LEFT PANEL -->
+        <!-- ========================= -->
+
+        <aside class="left-panel">
+
+            <!-- PERSONAL INFORMATION -->
+
+            <section class="editor-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Personal Information</h2>
+                        <p>Enter your card details</p>
+                    </div>
+
+                    <i class="fa-regular fa-id-card"></i>
+                </div>
+
+
+                <!-- Name -->
+
+                <div class="input-group">
+                    <label for="nameInput">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="nameInput"
+                        placeholder="Ayon Barman"
+                        value="Ayon Barman"
+                    >
+                </div>
+
+
+                <!-- Profession -->
+
+                <div class="input-group">
+                    <label for="professionInput">Profession</label>
+
+                    <input
+                        type="text"
+                        id="professionInput"
+                        placeholder="Software Developer"
+                        value="Software Developer"
+                    >
+                </div>
+
+
+                <!-- Company -->
+
+                <div class="input-group">
+                    <label for="companyInput">Company</label>
+
+                    <input
+                        type="text"
+                        id="companyInput"
+                        placeholder="AYOX"
+                        value="AYOX"
+                    >
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="input-group">
+                    <label for="phoneInput">Phone</label>
+
+                    <input
+                        type="text"
+                        id="phoneInput"
+                        placeholder="+880 1XXXXXXXXX"
+                        value="+880 1856 562 374"
+                    >
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="input-group">
+                    <label for="emailInput">Email</label>
+
+                    <input
+                        type="email"
+                        id="emailInput"
+                        placeholder="hello@example.com"
+                        value="ayon@example.com"
+                    >
+                </div>
+
+
+                <!-- Website -->
+
+                <div class="input-group">
+                    <label for="websiteInput">Website</label>
+
+                    <input
+                        type="text"
+                        id="websiteInput"
+                        placeholder="www.example.com"
+                        value="www.ayo-card.com"
+                    >
+                </div>
+
+
+                <!-- Bio -->
+
+                <div class="input-group">
+
+                    <label for="bioInput">
+                        Short Bio
+                    </label>
+
+                    <textarea
+                        id="bioInput"
+                        rows="3"
+                        placeholder="Write a short introduction..."
+                    >Creating digital experiences with technology.</textarea>
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- PROFILE PHOTO -->
+            <!-- ========================= -->
+
+            <section class="editor-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Profile Photo</h2>
+                        <p>Add your personal photo</p>
+                    </div>
+
+                    <i class="fa-regular fa-image"></i>
+
+                </div>
+
+
+                <label class="upload-box" for="photoInput">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    <strong>Upload Photo</strong>
+
+                    <span>JPG, PNG or WEBP</span>
+
+                    <input
+                        type="file"
+                        id="photoInput"
+                        accept="image/png,image/jpeg,image/webp"
+                        hidden
+                    >
+
+                </label>
+
+
+                <div class="control-row">
+
+                    <div class="input-group">
+
+                        <label for="photoShape">
+                            Photo Shape
+                        </label>
+
+                        <select id="photoShape">
+
+                            <option value="circle">
+                                Circle
+                            </option>
+
+                            <option value="square">
+                                Square
+                            </option>
+
+                            <option value="rounded">
+                                Rounded
+                            </option>
+
+                            <option value="pill">
+                                Pill
+                            </option>
+
+                            <option value="hexagon">
+                                Hexagon
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="range-group">
+
+                    <div class="range-label">
+
+                        <label for="photoSize">
+                            Photo Size
+                        </label>
+
+                        <span id="photoSizeValue">
+                            92px
+                        </span>
+
+                    </div>
+
+                    <input
+                        type="range"
+                        id="photoSize"
+                        min="55"
+                        max="150"
+                        value="92"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- LOGO -->
+            <!-- ========================= -->
+
+            <section class="editor-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Personal Logo</h2>
+                        <p>Upload your own logo</p>
+                    </div>
+
+                    <i class="fa-solid fa-shapes"></i>
+
+                </div>
+
+
+                <label class="upload-box" for="logoInput">
+
+                    <i class="fa-solid fa-upload"></i>
+
+                    <strong>Upload Logo</strong>
+
+                    <span>PNG recommended</span>
+
+                    <input
+                        type="file"
+                        id="logoInput"
+                        accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                        hidden
+                    >
+
+                </label>
+
+
+                <div class="range-group">
+
+                    <div class="range-label">
+
+                        <label for="logoSize">
+                            Logo Size
+                        </label>
+
+                        <span id="logoSizeValue">
+                            58px
+                        </span>
+
+                    </div>
+
+                    <input
+                        type="range"
+                        id="logoSize"
+                        min="25"
+                        max="100"
+                        value="58"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- SOCIAL MEDIA -->
+            <!-- ========================= -->
+
+            <section class="editor-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Social Media</h2>
+                        <p>Add your social profiles</p>
+                    </div>
+
+                    <i class="fa-solid fa-share-nodes"></i>
+
+                </div>
+
+
+                <!-- Instagram -->
+
+                <div class="social-input">
+
+                    <div class="social-icon instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="instagramInput"
+                        placeholder="Instagram username"
+                    >
+
+                </div>
+
+
+                <!-- Facebook -->
+
+                <div class="social-input">
+
+                    <div class="social-icon facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="facebookInput"
+                        placeholder="Facebook username"
+                    >
+
+                </div>
+
+
+                <!-- LinkedIn -->
+
+                <div class="social-input">
+
+                    <div class="social-icon linkedin">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="linkedinInput"
+                        placeholder="LinkedIn username"
+                    >
+
+                </div>
+
+
+                <!-- WhatsApp -->
+
+                <div class="social-input">
+
+                    <div class="social-icon whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="whatsappInput"
+                        placeholder="WhatsApp number"
+                    >
+
+                </div>
+
+
+                <!-- GitHub -->
+
+                <div class="social-input">
+
+                    <div class="social-icon github">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="githubInput"
+                        placeholder="GitHub username"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- QR CODE -->
+            <!-- ========================= -->
+
+            <section class="editor-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>QR Code</h2>
+                        <p>Generate a scannable QR</p>
+                    </div>
+
+                    <i class="fa-solid fa-qrcode"></i>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="qrInput">
+                        QR Content
+                    </label>
+
+                    <input
+                        type="text"
+                        id="qrInput"
+                        placeholder="https://example.com"
+                        value="https://ayo-card.com"
+                    >
+
+                </div>
+
+
+                <button
+                    class="secondary-btn"
+                    id="generateQRBtn"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-qrcode"></i>
+
+                    Generate QR Code
+
+                </button>
+
+            </section>
+
+        </aside>
+
+
+        <!-- ========================= -->
+        <!-- CENTER PREVIEW -->
+        <!-- ========================= -->
+
+        <section class="preview-area">
+
+            <div class="preview-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        LIVE PREVIEW
+                    </span>
+
+                    <h1>Your Digital Card</h1>
+
+                </div>
+
+                <div class="preview-status">
+
+                    <span class="status-dot"></span>
+
+                    Live
+
+                </div>
+
+            </div>
+
+
+            <div class="preview-stage">
+
+                <!-- CARD -->
+
+                <div
+                    class="business-card"
+                    id="businessCard"
+                >
+
+                    <!-- CARD BACKGROUND -->
+
+                    <div class="card-glow"></div>
+
+
+                    <!-- LOGO -->
+
+                    <img
+                        src=""
+                        alt="Logo"
+                        class="card-logo"
+                        id="cardLogo"
+                    >
+
+
+                    <!-- PROFILE PHOTO -->
+
+                    <div
+                        class="card-photo-wrapper circle"
+                        id="cardPhotoWrapper"
+                    >
+
+                        <img
+                            src=""
+                            alt="Profile"
+                            class="card-photo"
+                            id="cardPhoto"
+                        >
+
+                    </div>
+
+
+                    <!-- CARD CONTENT -->
+
+                    <div class="card-main-content">
+
+                        <div
+                            class="card-company"
+                            id="cardCompany"
+                        >
+                            AYOX
+                        </div>
+
+
+                        <h2
+                            class="card-name"
+                            id="cardName"
+                        >
+                            Ayon Barman
+                        </h2>
+
+
+                        <div
+                            class="card-profession"
+                            id="cardProfession"
+                        >
+                            Software Developer
+                        </div>
+
+
+                        <p
+                            class="card-bio"
+                            id="cardBio"
+                        >
+                            Creating digital experiences with technology.
+                        </p>
+
+
+                        <!-- CONTACT -->
+
+                        <div class="card-contact">
+
+                            <div class="contact-item">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <span id="cardPhone">
+                                    +880 1856 562 374
+                                </span>
+
+                            </div>
+
+
+                            <div class="contact-item">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <span id="cardEmail">
+                                    ayon@example.com
+                                </span>
+
+                            </div>
+
+
+                            <div class="contact-item">
+
+                                <i class="fa-solid fa-globe"></i>
+
+                                <span id="cardWebsite">
+                                    www.ayo-card.com
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SOCIAL MEDIA -->
+
+                    <div
+                        class="card-socials"
+                        id="cardSocials"
+                    ></div>
+
+
+                    <!-- QR -->
+
+                    <div
+                        class="card-qr"
+                        id="cardQR"
+                    ></div>
+
+
+                    <!-- DECORATIVE LINE -->
+
+                    <div class="card-line"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD INFO -->
+
+            <div class="preview-footer">
+
+                <div class="preview-info">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    <span>
+                        Changes appear instantly
+                    </span>
+
+                </div>
+
+                <div class="card-size">
+                    1050 × 600 px
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- RIGHT PANEL -->
+        <!-- ========================= -->
+
+        <aside class="right-panel">
+
+
+            <!-- ========================= -->
+            <!-- CARD STYLE -->
+            <!-- ========================= -->
+
+            <section class="editor-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Card Style</h2>
+                        <p>Make it yours</p>
+                    </div>
+
+                    <i class="fa-solid fa-palette"></i>
+
+                </div>
+
+
+                <!-- COLOR MODE -->
+
+                <div class="style-label">
+                    Background
+                </div>
+
+
+                <div class="color-mode-tabs">
+
+                    <button
+                        class="color-mode active"
+                        data-mode="solid"
+                        type="button"
+                    >
+                        Solid
+                    </button>
+
+                    <button
+                        class="color-mode"
+                        data-mode="gradient"
+                        type="button"
+                    >
+                        Gradient
+                    </button>
+
+                </div>
+
+
+                <!-- SOLID COLOR -->
+
+                <div id="solidColorControls">
+
+                    <div class="color-picker-row">
+
+                        <label>
+                            Card Color
+                        </label>
+
+                        <input
+                            type="color"
+                            id="primaryColor"
+                            value="#111318"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- GRADIENT COLORS -->
+
+                <div
+                    id="gradientColorControls"
+                    class="hidden"
+                >
+
+                    <div class="color-picker-row">
+
+                        <label>
+                            Color One
+                        </label>
+
+                        <input
+                            type="color"
+                            id="gradientColor1"
+                            value="#111318"
+                        >
+
+                    </div>
+
+
+                    <div class="color-picker-row">
+
+                        <label>
+                            Color Two
+                        </label>
+
+                        <input
+                            type="color"
+                            id="gradientColor2"
+                            value="#3b1d5a"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEXT COLOR -->
+
+                <div class="color-picker-row">
+
+                    <label>
+                        Text Color
+                    </label>
+
+                    <input
+                        type="color"
+                        id="textColor"
+                        value="#ffffff"
+                    >
+
+                </div>
+
+
+                <!-- BORDER COLOR -->
+
+                <div class="color-picker-row">
+
+                    <label>
+                        Border Color
+                    </label>
+
+                    <input
+                        type="color"
+                        id="borderColor"
+                        value="#ffffff"
+                    >
+
+                </div>
+
+
+                <!-- BORDER WIDTH -->
+
+                <div class="range-group">
+
+                    <div class="range-label">
+
+                        <label>
+                            Border Width
+                        </label>
+
+                        <span id="borderWidthValue">
+                            1px
+                        </span>
+
+                    </div>
+
+                    <input
+                        type="range"
+                        id="borderWidth"
+                        min="0"
+                        max="8"
+                        value="1"
+                    >
+
+                </div>
+
+
+                <!-- CARD RADIUS -->
+
+                <div class="range-group">
+
+                    <div class="range-label">
+
+                        <label>
+                            Card Radius
+                        </label>
+
+                        <span id="cardRadiusValue">
+                            28px
+                        </span>
+
+                    </div>
+
+                    <input
+                        type="range"
+                        id="cardRadius"
+                        min="0"
+                        max="50"
+                        value="28"
+                    >
+
+                </div>
+
+
+                <!-- SHADOW -->
+
+                <div class="range-group">
+
+                    <div class="range-label">
+
+                        <label>
+                            Shadow
+                        </label>
+
+                        <span id="shadowValue">
+                            45
+                        </span>
+
+                    </div>
+
+                    <input
+                        type="range"
+                        id="cardShadow"
+                        min="0"
+                        max="100"
+                        value="45"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- FONT -->
+            <!-- ========================= -->
+
+            <section class="editor-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Typography</h2>
+
+                        <p>
+                            Choose your style
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-font"></i>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="fontSelect">
+                        Card Font
+                    </label>
+
+                    <select id="fontSelect">
+
+                        <option value="Inter">
+                            Inter
+                        </option>
+
+                        <option value="Arial">
+                            Arial
+                        </option>
+
+                        <option value="Georgia">
+                            Georgia
+                        </option>
+
+                        <option value="Playfair Display">
+                            Playfair Display
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- CARD LAYOUT -->
+            <!-- ========================= -->
+
+            <section class="editor-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Photo Layout</h2>
+
+                        <p>
+                            Choose photo position
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-object-group"></i>
+
+                </div>
+
+
+                <div class="layout-grid">
+
+                    <button
+                        type="button"
+                        class="layout-btn active"
+                        data-layout="left"
+                    >
+
+                        <i class="fa-solid fa-align-left"></i>
+
+                        Left
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="layout-btn"
+                        data-layout="top"
+                    >
+
+                        <i class="fa-solid fa-arrow-up"></i>
+
+                        Top
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="layout-btn"
+                        data-layout="right"
+                    >
+
+                        <i class="fa-solid fa-align-right"></i>
+
+                        Right
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="layout-btn"
+                        data-layout="center"
+                    >
+
+                        <i class="fa-solid fa-align-center"></i>
+
+                        Center
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- QUICK COLORS -->
+            <!-- ========================= -->
+
+            <section class="editor-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>Quick Themes</h2>
+
+                        <p>
+                            Try a premium color
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </div>
+
+
+                <div class="theme-grid">
+
+                    <button
+                        class="theme-btn theme-black"
+                        data-theme="#111318"
+                        type="button"
+                    ></button>
+
+                    <button
+                        class="theme-btn theme-navy"
+                        data-theme="#10243e"
+                        type="button"
+                    ></button>
+
+                    <button
+                        class="theme-btn theme-purple"
+                        data-theme="#35164f"
+                        type="button"
+                    ></button>
+
+                    <button
+                        class="theme-btn theme-green"
+                        data-theme="#123c35"
+                        type="button"
+                    ></button>
+
+                    <button
+                        class="theme-btn theme-red"
+                        data-theme="#451c25"
+                        type="button"
+                    ></button>
+
+                    <button
+                        class="theme-btn theme-white"
+                        data-theme="#f4f4f0"
+                        type="button"
+                    ></button>
+
+                </div>
+
+            </section>
+
+        </aside>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- DOWNLOAD MODAL -->
+    <!-- ============================= -->
+
+    <div
+        class="modal-overlay"
+        id="downloadModal"
+    >
+
+        <div class="download-modal">
+
+            <button
+                class="modal-close"
+                id="closeModal"
+                type="button"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <div class="modal-icon">
+
+                <i class="fa-solid fa-download"></i>
+
+            </div>
+
+
+            <h2>
+                Download Your Card
+            </h2>
+
+
+            <p>
+                Choose the format you want to download.
+            </p>
+
+
+            <div class="download-options">
+
+                <button
+                    class="download-option"
+                    id="downloadPNG"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-image"></i>
+
+                    <span>
+                        <strong>PNG</strong>
+                        <small>High quality image</small>
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="download-option"
+                    id="downloadJPG"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-file-image"></i>
+
+                    <span>
+                        <strong>JPG</strong>
+                        <small>Universal image</small>
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- TOAST -->
+    <!-- ============================= -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Done
+        </span>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script src="js/card.js"></script>
+
+    <script src="js/export.js"></script>
+
+    <script src="js/app.js"></script>
+
+
+<!-- =====================================================
+     HTML2CANVAS
+     Card Export Library
+===================================================== -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+  crossorigin="anonymous">
+</script>
+
+<!-- =====================================================
+     AYO-CARD JAVASCRIPT
+===================================================== -->
+<script src="js/card.js"></script>
+<script src="js/app.js"></script>
+<script src="js/export.js"></script>
+
+</body>
+</html>
+</body>
+</html>

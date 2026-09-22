@@ -1,0 +1,3211 @@
+/* =========================================================
+   AYO-CARD
+   Premium Digital Visiting Card Designer
+   Main Stylesheet
+   ========================================================= */
+
+
+/* =========================================================
+   01. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+
+    --bg-main: #08090c;
+    --bg-secondary: #0d0f13;
+    --bg-panel: rgba(18, 20, 26, 0.94);
+    --bg-card: #111318;
+
+    --border: rgba(255, 255, 255, 0.09);
+    --border-light: rgba(255, 255, 255, 0.15);
+
+    --text-main: #ffffff;
+    --text-secondary: #a7abb5;
+    --text-muted: #6f7480;
+
+    --accent: #ffffff;
+    --accent-dark: #111318;
+
+    --success: #43d17a;
+
+    --radius-small: 8px;
+    --radius-medium: 12px;
+    --radius-large: 18px;
+
+    --shadow-panel:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    --transition:
+        0.2s ease;
+
+}
+
+
+/* =========================================================
+   02. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255, 255, 255, 0.035),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(120, 80, 255, 0.045),
+            transparent 30%
+        ),
+        var(--bg-main);
+
+    color: var(--text-main);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+button,
+input,
+textarea,
+select {
+
+    font-family: inherit;
+
+}
+
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+
+input,
+textarea,
+select {
+
+    outline: none;
+
+}
+
+
+/* =========================================================
+   03. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+    height: 8px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #08090c;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: #292c33;
+
+    border-radius: 20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #3a3e47;
+
+}
+
+
+/* =========================================================
+   04. TOP BAR
+   ========================================================= */
+
+.topbar {
+
+    height: 76px;
+
+    width: 100%;
+
+    padding:
+        0 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background:
+        rgba(8, 9, 12, 0.88);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.brand-mark {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #c9cbd0
+        );
+
+    color: #090a0d;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 25px rgba(255, 255, 255, 0.08);
+
+}
+
+
+.brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+}
+
+
+.brand-name {
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.brand-tagline {
+
+    font-size: 10px;
+
+    color: var(--text-muted);
+
+    letter-spacing: 0.04em;
+
+}
+
+
+/* =========================================================
+   TOP ACTIONS
+   ========================================================= */
+
+.top-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.top-btn,
+.download-main-btn {
+
+    min-height: 40px;
+
+    padding:
+        0 15px;
+
+    border-radius: 9px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border var(--transition);
+
+}
+
+
+.top-btn {
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    color:
+        var(--text-secondary);
+
+    border:
+        1px solid var(--border);
+
+}
+
+
+.top-btn:hover {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color:
+        #ffffff;
+
+}
+
+
+.download-main-btn {
+
+    background:
+        #ffffff;
+
+    color:
+        #0b0c0f;
+
+}
+
+
+.download-main-btn:hover {
+
+    transform:
+        translateY(-1px);
+
+    background:
+        #e9e9e9;
+
+}
+
+
+/* =========================================================
+   05. MAIN DESIGNER
+   ========================================================= */
+
+.designer {
+
+    width: 100%;
+
+    min-height:
+        calc(100vh - 76px);
+
+    display: grid;
+
+    grid-template-columns:
+        310px
+        minmax(420px, 1fr)
+        310px;
+
+    gap: 0;
+
+}
+
+
+/* =========================================================
+   06. LEFT + RIGHT PANELS
+   ========================================================= */
+
+.left-panel,
+.right-panel {
+
+    height:
+        calc(100vh - 76px);
+
+    overflow-y: auto;
+
+    background:
+        rgba(12, 14, 18, 0.72);
+
+    scrollbar-width: thin;
+
+}
+
+
+.left-panel {
+
+    border-right:
+        1px solid var(--border);
+
+}
+
+
+.right-panel {
+
+    border-left:
+        1px solid var(--border);
+
+}
+
+
+/* =========================================================
+   07. EDITOR SECTION
+   ========================================================= */
+
+.editor-section {
+
+    padding:
+        22px 19px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.055);
+
+}
+
+
+.editor-section:last-child {
+
+    border-bottom:
+        none;
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 19px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #f3f3f5;
+
+    margin-bottom: 4px;
+
+}
+
+
+.section-heading p {
+
+    font-size: 10px;
+
+    color: var(--text-muted);
+
+}
+
+
+.section-heading > i {
+
+    color:
+        #858a96;
+
+    font-size: 15px;
+
+    margin-top: 2px;
+
+}
+
+
+/* =========================================================
+   08. INPUT GROUP
+   ========================================================= */
+
+.input-group {
+
+    margin-bottom: 13px;
+
+}
+
+
+.input-group:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.input-group label,
+.range-label label,
+.style-label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        #9ca1ac;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.02em;
+
+}
+
+
+.input-group input,
+.input-group textarea,
+.input-group select,
+.social-input input {
+
+    width: 100%;
+
+    color:
+        #f4f4f5;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.075);
+
+    border-radius:
+        9px;
+
+    transition:
+        border var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+
+}
+
+
+.input-group input,
+.input-group select,
+.social-input input {
+
+    height: 40px;
+
+    padding:
+        0 11px;
+
+    font-size: 11px;
+
+}
+
+
+.input-group textarea {
+
+    min-height:
+        78px;
+
+    padding:
+        10px 11px;
+
+    font-size: 11px;
+
+    resize:
+        vertical;
+
+    line-height:
+        1.55;
+
+}
+
+
+.input-group input::placeholder,
+.input-group textarea::placeholder,
+.social-input input::placeholder {
+
+    color:
+        #565b65;
+
+}
+
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus,
+.social-input input:focus {
+
+    border-color:
+        rgba(255, 255, 255, 0.25);
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.025);
+
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.input-group select {
+
+    appearance:
+        none;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #777d87 50%
+        ),
+        linear-gradient(
+            135deg,
+            #777d87 50%,
+            transparent 50%
+        );
+
+    background-position:
+        calc(100% - 14px) 17px,
+        calc(100% - 10px) 17px;
+
+    background-size:
+        4px 4px,
+        4px 4px;
+
+    background-repeat:
+        no-repeat;
+
+}
+
+
+/* =========================================================
+   09. UPLOAD BOX
+   ========================================================= */
+
+.upload-box {
+
+    min-height:
+        105px;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    border:
+        1px dashed rgba(255, 255, 255, 0.14);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    cursor:
+        pointer;
+
+    transition:
+        border var(--transition),
+        background var(--transition),
+        transform var(--transition);
+
+}
+
+
+.upload-box:hover {
+
+    border-color:
+        rgba(255, 255, 255, 0.32);
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+}
+
+
+.upload-box > i {
+
+    font-size: 19px;
+
+    color:
+        #aeb2ba;
+
+    margin-bottom: 2px;
+
+}
+
+
+.upload-box strong {
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color:
+        #e5e6e9;
+
+}
+
+
+.upload-box span {
+
+    font-size: 9px;
+
+    color:
+        #656a75;
+
+}
+
+
+/* =========================================================
+   10. RANGE CONTROLS
+   ========================================================= */
+
+.range-group {
+
+    margin-top: 15px;
+
+}
+
+
+.range-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.range-label span {
+
+    color:
+        #777d88;
+
+    font-size: 9px;
+
+}
+
+
+input[type="range"] {
+
+    width: 100%;
+
+    height: 4px;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    background:
+        #292c32;
+
+    border-radius:
+        10px;
+
+    outline:
+        none;
+
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+    background:
+        #ffffff;
+
+    border:
+        2px solid #111318;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.25);
+
+    cursor:
+        pointer;
+
+}
+
+
+input[type="range"]::-moz-range-thumb {
+
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+    background:
+        #ffffff;
+
+    border:
+        2px solid #111318;
+
+    cursor:
+        pointer;
+
+}
+
+
+/* =========================================================
+   11. SOCIAL INPUT
+   ========================================================= */
+
+.social-input {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 9px;
+
+}
+
+
+.social-input:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.social-input input {
+
+    flex:
+        1;
+
+}
+
+
+.social-icon {
+
+    width: 36px;
+
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    color:
+        #ffffff;
+
+}
+
+
+.social-icon.instagram {
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c2eff,
+            #e1306c,
+            #ff9f43
+        );
+
+}
+
+
+.social-icon.facebook {
+
+    background:
+        #1877f2;
+
+}
+
+
+.social-icon.linkedin {
+
+    background:
+        #0a66c2;
+
+}
+
+
+.social-icon.whatsapp {
+
+    background:
+        #25d366;
+
+}
+
+
+.social-icon.github {
+
+    background:
+        #24292f;
+
+}
+
+
+/* =========================================================
+   12. BUTTONS
+   ========================================================= */
+
+.secondary-btn {
+
+    width: 100%;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius:
+        9px;
+
+    color:
+        #e9e9ea;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+
+}
+
+
+.secondary-btn:hover {
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+}
+
+
+.secondary-btn:active {
+
+    transform:
+        scale(0.98);
+
+}
+
+
+/* =========================================================
+   13. CENTER PREVIEW AREA
+   ========================================================= */
+
+.preview-area {
+
+    min-width: 0;
+
+    min-height:
+        calc(100vh - 76px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.025),
+            transparent 50%
+        );
+
+}
+
+
+/* =========================================================
+   PREVIEW HEADER
+   ========================================================= */
+
+.preview-header {
+
+    height:
+        86px;
+
+    padding:
+        0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
+
+}
+
+
+.eyebrow {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    color:
+        #6d727d;
+
+}
+
+
+.preview-header h1 {
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+}
+
+
+.preview-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color:
+        #777d87;
+
+    font-size: 10px;
+
+}
+
+
+.status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--success);
+
+    box-shadow:
+        0 0 12px rgba(67, 209, 122, 0.55);
+
+}
+
+
+/* =========================================================
+   14. PREVIEW STAGE
+   ========================================================= */
+
+.preview-stage {
+
+    flex:
+        1;
+
+    min-height:
+        500px;
+
+    padding:
+        45px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: auto;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.018) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        30px 30px;
+
+}
+
+
+/* =========================================================
+   15. BUSINESS CARD
+   ========================================================= */
+
+.business-card {
+
+    width:
+        min(700px, 100%);
+
+    aspect-ratio:
+        1.75 / 1;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    flex-shrink:
+        0;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius:
+        28px;
+
+    background:
+        #111318;
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.45);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    transition:
+        border-radius 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+/* =========================================================
+   CARD DECORATIVE GLOW
+   ========================================================= */
+
+.card-glow {
+
+    position:
+        absolute;
+
+    width:
+        55%;
+
+    height:
+        100%;
+
+    right:
+        -20%;
+
+    top:
+        -45%;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.09),
+            transparent 65%
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   CARD LOGO
+   ========================================================= */
+
+.card-logo {
+
+    position:
+        absolute;
+
+    top:
+        7%;
+
+    right:
+        6%;
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    object-fit:
+        contain;
+
+    display:
+        none;
+
+    z-index:
+        5;
+
+}
+
+
+/* =========================================================
+   CARD PHOTO
+   ========================================================= */
+
+.card-photo-wrapper {
+
+    position:
+        absolute;
+
+    left:
+        6%;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    width:
+        92px;
+
+    height:
+        92px;
+
+    display:
+        none;
+
+    overflow:
+        hidden;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        2px solid rgba(255, 255, 255, 0.25);
+
+    z-index:
+        4;
+
+    transition:
+        width 0.2s ease,
+        height 0.2s ease,
+        border-radius 0.2s ease;
+
+}
+
+
+.card-photo-wrapper.circle {
+
+    border-radius:
+        50%;
+
+}
+
+
+.card-photo-wrapper.square {
+
+    border-radius:
+        0;
+
+}
+
+
+.card-photo-wrapper.rounded {
+
+    border-radius:
+        18px;
+
+}
+
+
+.card-photo-wrapper.pill {
+
+    border-radius:
+        999px;
+
+}
+
+
+.card-photo-wrapper.hexagon {
+
+    border-radius:
+        0;
+
+    clip-path:
+        polygon(
+            25% 6%,
+            75% 6%,
+            100% 50%,
+            75% 94%,
+            25% 94%,
+            0 50%
+        );
+
+}
+
+
+.card-photo {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+}
+
+
+/* =========================================================
+   16. CARD MAIN CONTENT
+   ========================================================= */
+
+.card-main-content {
+
+    position:
+        absolute;
+
+    left:
+        22%;
+
+    top:
+        50%;
+
+    width:
+        65%;
+
+    transform:
+        translateY(-50%);
+
+    z-index:
+        3;
+
+}
+
+
+.card-company {
+
+    margin-bottom:
+        7px;
+
+    font-size:
+        clamp(7px, 1vw, 10px);
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.16em;
+
+    text-transform:
+        uppercase;
+
+    color:
+        rgba(255, 255, 255, 0.58);
+
+}
+
+
+.card-name {
+
+    margin:
+        0;
+
+    font-size:
+        clamp(22px, 3vw, 36px);
+
+    line-height:
+        1.05;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        -0.035em;
+
+}
+
+
+.card-profession {
+
+    margin-top:
+        7px;
+
+    font-size:
+        clamp(9px, 1.15vw, 13px);
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+}
+
+
+.card-bio {
+
+    max-width:
+        400px;
+
+    margin-top:
+        13px;
+
+    font-size:
+        clamp(7px, 0.9vw, 10px);
+
+    line-height:
+        1.5;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+
+}
+
+
+/* =========================================================
+   17. CARD CONTACT
+   ========================================================= */
+
+.card-contact {
+
+    margin-top:
+        15px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        6px;
+
+}
+
+
+.contact-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    font-size:
+        clamp(7px, 0.9vw, 10px);
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+}
+
+
+.contact-item i {
+
+    width:
+        12px;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size:
+        8px;
+
+}
+
+
+/* =========================================================
+   18. SOCIAL ICONS ON CARD
+   ========================================================= */
+
+.card-socials {
+
+    position:
+        absolute;
+
+    left:
+        6%;
+
+    bottom:
+        7%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    z-index:
+        5;
+
+}
+
+
+.card-socials .card-social-item {
+
+    width:
+        25px;
+
+    height:
+        25px;
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    font-size:
+        10px;
+
+}
+
+
+/* =========================================================
+   19. QR ON CARD
+   ========================================================= */
+
+.card-qr {
+
+    position:
+        absolute;
+
+    right:
+        6%;
+
+    bottom:
+        7%;
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    padding:
+        4px;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        #ffffff;
+
+    border-radius:
+        7px;
+
+    z-index:
+        5;
+
+}
+
+
+.card-qr img,
+.card-qr canvas {
+
+    width:
+        100% !important;
+
+    height:
+        100% !important;
+
+    display:
+        block;
+
+}
+
+
+/* =========================================================
+   20. CARD LINE
+   ========================================================= */
+
+.card-line {
+
+    position:
+        absolute;
+
+    left:
+        6%;
+
+    right:
+        6%;
+
+    bottom:
+        18%;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.22),
+            transparent
+        );
+
+    z-index:
+        2;
+
+}
+
+
+/* =========================================================
+   21. CARD LAYOUT MODES
+   ========================================================= */
+
+
+/* LEFT */
+
+.business-card.layout-left .card-photo-wrapper {
+
+    left:
+        6%;
+
+}
+
+
+.business-card.layout-left .card-main-content {
+
+    left:
+        22%;
+
+    text-align:
+        left;
+
+}
+
+
+/* TOP */
+
+.business-card.layout-top .card-photo-wrapper {
+
+    top:
+        18%;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.business-card.layout-top .card-main-content {
+
+    top:
+        57%;
+
+    left:
+        10%;
+
+    width:
+        80%;
+
+    text-align:
+        center;
+
+    transform:
+        translateY(-50%);
+
+}
+
+
+.business-card.layout-top .card-bio {
+
+    margin-left:
+        auto;
+
+    margin-right:
+        auto;
+
+}
+
+
+.business-card.layout-top .card-contact {
+
+    align-items:
+        center;
+
+}
+
+
+.business-card.layout-top .card-line {
+
+    display:
+        none;
+
+}
+
+
+/* RIGHT */
+
+.business-card.layout-right .card-photo-wrapper {
+
+    left:
+        auto;
+
+    right:
+        6%;
+
+}
+
+
+.business-card.layout-right .card-main-content {
+
+    left:
+        6%;
+
+    text-align:
+        left;
+
+    width:
+        65%;
+
+}
+
+
+/* CENTER */
+
+.business-card.layout-center .card-photo-wrapper {
+
+    left:
+        50%;
+
+    top:
+        23%;
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.business-card.layout-center .card-main-content {
+
+    left:
+        10%;
+
+    top:
+        65%;
+
+    width:
+        80%;
+
+    text-align:
+        center;
+
+}
+
+
+.business-card.layout-center .card-bio {
+
+    margin-left:
+        auto;
+
+    margin-right:
+        auto;
+
+}
+
+
+.business-card.layout-center .card-contact {
+
+    align-items:
+        center;
+
+}
+
+
+/* =========================================================
+   22. PREVIEW FOOTER
+   ========================================================= */
+
+.preview-footer {
+
+    min-height:
+        58px;
+
+    padding:
+        0 30px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.05);
+
+}
+
+
+.preview-info {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        #646a75;
+
+    font-size:
+        9px;
+
+}
+
+
+.preview-info i {
+
+    font-size:
+        10px;
+
+}
+
+
+.card-size {
+
+    color:
+        #50555e;
+
+    font-size:
+        9px;
+
+}
+
+
+/* =========================================================
+   23. COLOR MODE TABS
+   ========================================================= */
+
+.color-mode-tabs {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        6px;
+
+    margin-bottom:
+        14px;
+
+}
+
+
+.color-mode {
+
+    height:
+        34px;
+
+    border-radius:
+        8px;
+
+    color:
+        #7e838d;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    transition:
+        all var(--transition);
+
+}
+
+
+.color-mode:hover {
+
+    color:
+        #ffffff;
+
+}
+
+
+.color-mode.active {
+
+    color:
+        #101115;
+
+    background:
+        #ffffff;
+
+    border-color:
+        #ffffff;
+
+}
+
+
+/* =========================================================
+   24. COLOR PICKERS
+   ========================================================= */
+
+.color-picker-row {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    min-height:
+        40px;
+
+    margin-bottom:
+        8px;
+
+    padding:
+        0 10px;
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.055);
+
+}
+
+
+.color-picker-row label {
+
+    font-size:
+        10px;
+
+    color:
+        #9da2ac;
+
+}
+
+
+.color-picker-row input[type="color"] {
+
+    width:
+        28px;
+
+    height:
+        25px;
+
+    padding:
+        0;
+
+    border:
+        none;
+
+    border-radius:
+        6px;
+
+    background:
+        transparent;
+
+    cursor:
+        pointer;
+
+}
+
+
+.color-picker-row input[type="color"]::-webkit-color-swatch-wrapper {
+
+    padding:
+        0;
+
+}
+
+
+.color-picker-row input[type="color"]::-webkit-color-swatch {
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    border-radius:
+        6px;
+
+}
+
+
+/* =========================================================
+   25. LAYOUT BUTTONS
+   ========================================================= */
+
+.layout-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        7px;
+
+}
+
+
+.layout-btn {
+
+    min-height:
+        42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    border-radius:
+        9px;
+
+    color:
+        #777d88;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    transition:
+        all var(--transition);
+
+}
+
+
+.layout-btn:hover {
+
+    color:
+        #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+}
+
+
+.layout-btn.active {
+
+    color:
+        #111318;
+
+    background:
+        #ffffff;
+
+    border-color:
+        #ffffff;
+
+}
+
+
+/* =========================================================
+   26. QUICK THEMES
+   ========================================================= */
+
+.theme-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap:
+        7px;
+
+}
+
+
+.theme-btn {
+
+    width:
+        100%;
+
+    aspect-ratio:
+        1;
+
+    border-radius:
+        9px;
+
+    border:
+        2px solid transparent;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform var(--transition),
+        border var(--transition);
+
+}
+
+
+.theme-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.theme-btn:focus {
+
+    border-color:
+        #ffffff;
+
+}
+
+
+.theme-black {
+
+    background:
+        #111318;
+
+}
+
+
+.theme-navy {
+
+    background:
+        #10243e;
+
+}
+
+
+.theme-purple {
+
+    background:
+        #35164f;
+
+}
+
+
+.theme-green {
+
+    background:
+        #123c35;
+
+}
+
+
+.theme-red {
+
+    background:
+        #451c25;
+
+}
+
+
+.theme-white {
+
+    background:
+        #f4f4f0;
+
+}
+
+
+/* =========================================================
+   27. HIDDEN
+   ========================================================= */
+
+.hidden {
+
+    display:
+        none !important;
+
+}
+
+
+/* =========================================================
+   28. DOWNLOAD MODAL
+   ========================================================= */
+
+.modal-overlay {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        500;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    background:
+        rgba(0, 0, 0, 0.7);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+}
+
+
+.modal-overlay.show {
+
+    display:
+        flex;
+
+}
+
+
+.download-modal {
+
+    width:
+        min(390px, 100%);
+
+    position:
+        relative;
+
+    padding:
+        30px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius:
+        20px;
+
+    background:
+        #111318;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.5);
+
+    animation:
+        modalIn 0.2s ease;
+
+}
+
+
+@keyframes modalIn {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(10px) scale(0.98);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0) scale(1);
+
+    }
+
+}
+
+
+.modal-close {
+
+    position:
+        absolute;
+
+    top:
+        15px;
+
+    right:
+        15px;
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    border-radius:
+        8px;
+
+    color:
+        #777d87;
+
+    background:
+        rgba(255,255,255,0.04);
+
+}
+
+
+.modal-close:hover {
+
+    color:
+        #ffffff;
+
+    background:
+        rgba(255,255,255,0.08);
+
+}
+
+
+.modal-icon {
+
+    width:
+        50px;
+
+    height:
+        50px;
+
+    margin-bottom:
+        18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        14px;
+
+    background:
+        #ffffff;
+
+    color:
+        #101115;
+
+    font-size:
+        18px;
+
+}
+
+
+.download-modal h2 {
+
+    font-size:
+        19px;
+
+    margin-bottom:
+        7px;
+
+}
+
+
+.download-modal > p {
+
+    color:
+        #777d87;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.5;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+/* =========================================================
+   DOWNLOAD OPTIONS
+   ========================================================= */
+
+.download-options {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+}
+
+
+.download-option {
+
+    width:
+        100%;
+
+    padding:
+        13px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    text-align:
+        left;
+
+    border-radius:
+        11px;
+
+    color:
+        #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    transition:
+        all var(--transition);
+
+}
+
+
+.download-option:hover {
+
+    background:
+        rgba(255, 255, 255, 0.075);
+
+    border-color:
+        rgba(255, 255, 255, 0.15);
+
+}
+
+
+.download-option > i {
+
+    width:
+        35px;
+
+    height:
+        35px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+}
+
+
+.download-option span {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        3px;
+
+}
+
+
+.download-option strong {
+
+    font-size:
+        11px;
+
+}
+
+
+.download-option small {
+
+    color:
+        #676c76;
+
+    font-size:
+        9px;
+
+}
+
+
+/* =========================================================
+   29. TOAST
+   ========================================================= */
+
+.toast {
+
+    position:
+        fixed;
+
+    left:
+        50%;
+
+    bottom:
+        25px;
+
+    z-index:
+        800;
+
+    transform:
+        translate(-50%, 100px);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        11px 15px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(18, 20, 25, 0.95);
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.4);
+
+    color:
+        #e7e8eb;
+
+    font-size:
+        10px;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.toast.show {
+
+    opacity:
+        1;
+
+    transform:
+        translate(-50%, 0);
+
+}
+
+
+.toast i {
+
+    color:
+        var(--success);
+
+}
+
+
+/* =========================================================
+   30. CARD PHOTO EMPTY STATE
+   ========================================================= */
+
+.card-photo-wrapper:has(.card-photo[src=""]) {
+
+    display:
+        none;
+
+}
+
+
+/* =========================================================
+   31. RESPONSIVE — LARGE LAPTOP
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+    .designer {
+
+        grid-template-columns:
+            280px
+            minmax(380px, 1fr)
+            280px;
+
+    }
+
+    .editor-section {
+
+        padding:
+            20px 16px;
+
+    }
+
+}
+
+
+/* =========================================================
+   32. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .designer {
+
+        grid-template-columns:
+            270px
+            minmax(400px, 1fr);
+
+    }
+
+    .right-panel {
+
+        display:
+            none;
+
+    }
+
+    .preview-header {
+
+        padding:
+            0 22px;
+
+    }
+
+    .preview-footer {
+
+        padding:
+            0 22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   33. RESPONSIVE — SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .topbar {
+
+        height:
+            68px;
+
+        padding:
+            0 16px;
+
+    }
+
+    .designer {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+    }
+
+    .left-panel,
+    .right-panel {
+
+        height:
+            auto;
+
+        max-height:
+            none;
+
+        overflow:
+            visible;
+
+    }
+
+    .left-panel {
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid var(--border);
+
+    }
+
+    .right-panel {
+
+        display:
+            block;
+
+        border-left:
+            none;
+
+        border-top:
+            1px solid var(--border);
+
+    }
+
+    .preview-area {
+
+        min-height:
+            650px;
+
+        order:
+            -1;
+
+    }
+
+    .preview-stage {
+
+        min-height:
+            500px;
+
+        padding:
+            35px 18px;
+
+    }
+
+    .business-card {
+
+        width:
+            min(650px, 100%);
+
+    }
+
+}
+
+
+/* =========================================================
+   34. RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .topbar {
+
+        height:
+            64px;
+
+        padding:
+            0 12px;
+
+    }
+
+    .brand-tagline {
+
+        display:
+            none;
+
+    }
+
+    .brand-mark {
+
+        width:
+            35px;
+
+        height:
+            35px;
+
+    }
+
+    .brand-name {
+
+        font-size:
+            14px;
+
+    }
+
+    .top-btn {
+
+        display:
+            none;
+
+    }
+
+    .download-main-btn {
+
+        height:
+            36px;
+
+        padding:
+            0 11px;
+
+        font-size:
+            10px;
+
+    }
+
+    .preview-area {
+
+        min-height:
+            480px;
+
+    }
+
+    .preview-header {
+
+        height:
+            70px;
+
+        padding:
+            0 16px;
+
+    }
+
+    .preview-header h1 {
+
+        font-size:
+            15px;
+
+    }
+
+    .preview-stage {
+
+        min-height:
+            360px;
+
+        padding:
+            25px 12px;
+
+        overflow:
+            hidden;
+
+    }
+
+    .business-card {
+
+        width:
+            100%;
+
+        border-radius:
+            18px;
+
+    }
+
+    .preview-footer {
+
+        min-height:
+            48px;
+
+        padding:
+            0 16px;
+
+    }
+
+    .card-size {
+
+        display:
+            none;
+
+    }
+
+    .card-name {
+
+        font-size:
+            clamp(18px, 6vw, 27px);
+
+    }
+
+    .card-profession {
+
+        font-size:
+            8px;
+
+    }
+
+    .card-bio {
+
+        font-size:
+            6px;
+
+        margin-top:
+            8px;
+
+    }
+
+    .card-contact {
+
+        margin-top:
+            9px;
+
+        gap:
+            4px;
+
+    }
+
+    .contact-item {
+
+        font-size:
+            6px;
+
+        gap:
+            4px;
+
+    }
+
+    .contact-item i {
+
+        font-size:
+            6px;
+
+        width:
+            8px;
+
+    }
+
+    .card-socials .card-social-item {
+
+        width:
+            20px;
+
+        height:
+            20px;
+
+        font-size:
+            8px;
+
+    }
+
+    .card-qr {
+
+        width:
+            45px;
+
+        height:
+            45px;
+
+    }
+
+    .card-photo-wrapper {
+
+        width:
+            65px;
+
+        height:
+            65px;
+
+    }
+
+    .card-logo {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+    }
+
+}
+
+
+/* =========================================================
+   35. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .download-main-btn {
+
+        padding:
+            0 9px;
+
+    }
+
+    .download-main-btn i {
+
+        display:
+            none;
+
+    }
+
+    .preview-stage {
+
+        padding:
+            20px 8px;
+
+    }
+
+    .card-name {
+
+        font-size:
+            17px;
+
+    }
+
+    .card-company {
+
+        font-size:
+            6px;
+
+    }
+
+    .card-profession {
+
+        font-size:
+            7px;
+
+    }
+
+    .card-bio {
+
+        display:
+            none;
+
+    }
+
+    .card-contact {
+
+        margin-top:
+            8px;
+
+    }
+
+    .card-socials {
+
+        bottom:
+            6%;
+
+    }
+
+    .card-qr {
+
+        bottom:
+            6%;
+
+    }
+
+}
+
+
+/* =========================================================
+   36. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+    }
+
+}
